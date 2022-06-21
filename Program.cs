@@ -5,7 +5,7 @@
 [345, 897, 568, 234] -> 2 */
 
 
-void Print(int[] arr)
+/* void Print(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -37,3 +37,40 @@ for (int i = 0; i < mass.Length; i++)
 
 Print(mass);
 CheckDigit(mass);
+ */
+
+/* Задача 36: Задайте одномерный массив, заполненный
+случайными числами. Найдите сумму элементов, стоящих
+на нечётных позициях.
+[3, 7, 23, 12] -> 19
+[-4, -6, 89, 6] -> 0 */
+
+void Print(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+
+    }
+    Console.WriteLine();
+}
+
+void TotalSumm(int[] arr)
+{
+    int summ = 0;
+    for (int i = 1; i < arr.Length; i += 2)
+    {
+        summ += arr[i];
+    }
+    System.Console.WriteLine(summ);
+}
+
+
+int[] mass = new int[10];
+for (int i = 0; i < mass.Length; i++)
+{
+    mass[i] = new Random().Next(0, 10);
+}
+
+Print(mass);
+TotalSumm(mass);
