@@ -45,7 +45,7 @@ CheckDigit(mass);
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0 */
 
-void Print(int[] arr)
+/* void Print(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -73,4 +73,55 @@ for (int i = 0; i < mass.Length; i++)
 }
 
 Print(mass);
-TotalSumm(mass);
+TotalSumm(mass); */
+
+/* Задача 38: Задайте массив вещественных чисел. Найдите
+разницу между максимальным и минимальным
+элементов массива. */
+
+int GetMax(int[] array)
+{
+    int maxElement = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] > maxElement)
+            maxElement = array[i];
+    }
+    return maxElement;
+} 
+
+int GetMin(int[] array)
+{
+    int minElement = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] < minElement)
+            minElement = array[i];
+    }
+    return minElement;
+} 
+
+void Print(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+
+    }
+    Console.WriteLine();
+}
+
+int[] mass = new int[10];
+for (int i = 0; i < mass.Length; i++)
+{
+    mass[i] = new Random().Next(1, 100);
+}
+
+Print(mass);
+Console.WriteLine();
+Console.WriteLine(GetMax(mass) - GetMin(mass));
+
+
+// Самым разумным решением считаю это: 
+// Console.WriteLine(mass.Max() - mass.Min()); 
+// Но можно и зморочиться ;))
