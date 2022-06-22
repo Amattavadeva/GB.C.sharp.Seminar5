@@ -124,4 +124,4 @@ Console.WriteLine(GetMax(mass) - GetMin(mass));
 
 // Самым разумным решением считаю это: 
 // Console.WriteLine(mass.Max() - mass.Min()); 
-// Но можно и зморочиться ;))
+// Но можно и заморочиться ;))
