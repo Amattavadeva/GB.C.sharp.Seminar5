@@ -79,9 +79,9 @@ TotalSumm(mass); */
 разницу между максимальным и минимальным
 элементов массива. */
 
-int GetMax(int[] array)
+double GetMax(double[] array)
 {
-    int maxElement = array[0];
+    double maxElement = array[0];
     for (int i = 1; i < array.Length; i++)
     {
         if (array[i] > maxElement)
@@ -90,9 +90,9 @@ int GetMax(int[] array)
     return maxElement;
 } 
 
-int GetMin(int[] array)
+double GetMin(double[] array)
 {
-    int minElement = array[0];
+    double minElement = array[0];
     for (int i = 1; i < array.Length; i++)
     {
         if (array[i] < minElement)
@@ -101,27 +101,22 @@ int GetMin(int[] array)
     return minElement;
 } 
 
-void Print(int[] arr)
+void Print(double[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
         Console.Write(arr[i] + " ");
-
     }
-    Console.WriteLine();
 }
 
-int[] mass = new int[10];
+double[] mass = new double[10];
 for (int i = 0; i < mass.Length; i++)
 {
-    mass[i] = new Random().Next(1, 100);
+    mass[i] = new Random().Next(0, 10) + new Random().NextDouble();
+    mass[i] = Math.Round(mass[i], 2);
 }
 
 Print(mass);
-Console.WriteLine();
-Console.WriteLine(GetMax(mass) - GetMin(mass));
-
-
-// Самым разумным решением считаю это: 
-// Console.WriteLine(mass.Max() - mass.Min()); 
-// Но можно и заморочиться ;))
+System.Console.WriteLine();
+Console.WriteLine($"Масимум массива {GetMax(mass)}, минимум {GetMin(mass)}");
+Console.WriteLine($"Разница между максимальным и минимальным {GetMax(mass) - GetMin(mass)}");
